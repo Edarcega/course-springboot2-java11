@@ -21,7 +21,7 @@ import com.educandoweb.course.repositories.UserRepository;
 @Configuration
 @Profile("test") // Deve ser igual ao nome inserido no arquivo application.properties (Profile)
 public class TestConfig implements CommandLineRunner{
-
+	
 	// @Autowired: Associa a dependência
 	// neste caso com o UserRepository que é responsável por fazer as operações de
 	// banco
