@@ -31,5 +31,18 @@ public class UserService {
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+	
+	@SuppressWarnings("deprecation") // Ver porque isso aqui
+	public User Update(Long id, User obj) {
+		User entity = repository.getOne(id);
+		updateDate(entity, obj);
+		return repository.save(entity);
+	}
+
+	private void updateDate(User entity, User obj) {
+		entity.setName(obj.getName());
+		entity.setEmail(obj.getEmail());
+		entity.setPhone(obj.getPhone());
+	}
 
 }
